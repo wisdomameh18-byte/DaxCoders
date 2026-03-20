@@ -143,7 +143,10 @@ footer{border-top:1px solid var(--bdr);padding:52px 0 36px}
 .ft-bot{border-top:1px solid var(--bdr);padding-top:24px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
 .ft-bot p{font-size:0.8rem;color:var(--mt)}
 .ft-bot span{color:var(--ac2)}
-.fin{animation:fi .45s cubic-bezier(.16,1,.3,1) both}
+.back-btn{display:inline-flex;align-items:center;gap:8px;margin:28px 0 8px;padding:9px 18px;border-radius:999px;background:var(--s2);border:1px solid var(--bdr);color:var(--mt);font-size:0.85rem;font-weight:600;cursor:pointer;transition:color .15s,border-color .15s,background .15s}
+.back-btn:hover{color:var(--tx);border-color:rgba(255,255,255,0.2);background:rgba(255,255,255,0.07)}
+@media(max-width:680px){.back-btn{margin:20px 0 4px;font-size:0.9rem;padding:10px 20px}}
+
 @keyframes fi{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 /* ── Tablet (≤ 900px) ── */
 @media(max-width:900px){
@@ -643,6 +646,7 @@ function renderCat(cat){
   const items=T.filter(t=>t.cat===cat);
   const subs=[...new Set(items.map(t=>t.sub))];
   pc.innerHTML=`<div class="wrap fin">
+    <button class="back-btn" data-pg="home"><i class="fas fa-arrow-left"></i> Home</button>
     <div class="pg-head">
       <div class="sec-lbl">${LABELS[cat]}</div>
       <h1 class="sec-h">${LABELS[cat]}</h1>
@@ -654,7 +658,7 @@ function renderCat(cat){
     </div>
     <div class="grid" id="tgrid">${items.map(cardHTML).join('')}</div>
   </div>`;
-  bindCards();
+  bindCards(); bindAll();
   document.querySelectorAll('.fb').forEach(b=>{
     b.addEventListener('click',function(){
       document.querySelectorAll('.fb').forEach(x=>x.classList.remove('active'));
