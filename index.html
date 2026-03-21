@@ -148,6 +148,9 @@ footer{border-top:1px solid var(--bdr);padding:52px 0 36px}
 @media(max-width:680px){.back-btn{margin:20px 0 4px;font-size:0.9rem;padding:10px 20px}}
 
 @keyframes fi{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.prev-btn{position:absolute;bottom:12px;right:12px;display:inline-flex;align-items:center;gap:6px;padding:6px 13px;border-radius:999px;background:rgba(0,0,0,0.72);backdrop-filter:blur(6px);color:#fff;font-size:0.72rem;font-weight:700;letter-spacing:0.3px;border:1px solid rgba(255,255,255,0.2);text-decoration:none;opacity:0;transform:translateY(5px);transition:opacity .22s,transform .22s,background .15s;z-index:10}
+.card:hover .prev-btn{opacity:1;transform:translateY(0)}
+.prev-btn:hover{background:var(--ac);border-color:var(--ac)}
 /* ── Tablet (≤ 900px) ── */
 @media(max-width:900px){
   .wa-grid{grid-template-columns:1fr}
@@ -426,129 +429,129 @@ footer{border-top:1px solid var(--bdr);padding:52px 0 36px}
 <script>
 const T=[
   // ── WEB TEMPLATES ─────────────────────────────────────────────────────────
-  // Banking: online banking app UI on laptop/phone
   {id:1,cat:'web',sub:'banking',icon:'fa-landmark',title:'NexaBank',
-   desc:'Banking website with dashboard & account management',tag:'corporate',
-   img:'https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=700&h=460&fit=crop&q=80'},
-  // Restaurant: beautifully plated food / restaurant interior
+   desc:'Online banking website with dashboard & account management UI',tag:'corporate',
+   url:'https://htmlstream.com/preview/front-v4.1/html/demos/demo-bank.html',
+   img:'https://images.unsplash.com/photo-1601597111158-2fceff292cdc?w=700&h=460&fit=crop&q=80'},
   {id:2,cat:'web',sub:'restaurant',icon:'fa-utensils',title:'UrbanEats',
-   desc:'Restaurant & cafe template with menu and reservations',tag:'food',
-   img:'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=700&h=460&fit=crop&q=80'},
-  // SaaS: clean app UI on macbook screen
+   desc:'Restaurant & cafe website with online menu and table reservations',tag:'food',
+   url:'https://preview.colorlib.com/#restaurantly',
+   img:'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=700&h=460&fit=crop&q=80'},
   {id:3,cat:'web',sub:'saas',icon:'fa-cloud',title:'Void.tech',
-   desc:'SaaS landing page with pricing tables and feature list',tag:'cloud',
-   img:'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=700&h=460&fit=crop&q=80'},
-  // Logistics: cargo trucks / shipping containers
+   desc:'Modern SaaS landing page with pricing tables and feature sections',tag:'cloud',
+   url:'https://preview.colorlib.com/#saas',
+   img:'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=700&h=460&fit=crop&q=80'},
   {id:4,cat:'web',sub:'logistics',icon:'fa-truck-fast',title:'SwiftCargo',
-   desc:'Logistics & shipping website with live tracking system',tag:'logistics',
-   img:'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=700&h=460&fit=crop&q=80'},
-  // Portfolio: designer's desk with creative work
+   desc:'Logistics & shipping company website with tracking system',tag:'logistics',
+   url:'https://preview.colorlib.com/#logistic',
+   img:'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=700&h=460&fit=crop&q=80'},
   {id:5,cat:'web',sub:'portfolio',icon:'fa-camera',title:'Artemis',
-   desc:'Photographer portfolio with full-screen gallery',tag:'creative',
+   desc:'Creative portfolio & photography website with full-screen gallery',tag:'creative',
+   url:'https://preview.colorlib.com/#photographer',
    img:'https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=700&h=460&fit=crop&q=80'},
-  // Finance: financial charts and graphs on screen
   {id:6,cat:'web',sub:'finance',icon:'fa-chart-line',title:'Finwise',
-   desc:'Fintech dashboard with live charts and analytics panels',tag:'finance',
-   img:'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=700&h=460&fit=crop&q=80'},
-  // Health/Gym: person working out in modern gym
-  {id:7,cat:'web',sub:'health',icon:'fa-heart-pulse',title:'FitHub',
-   desc:'Gym & wellness website with class booking system',tag:'health',
+   desc:'Finance & investment company website with charts and analytics',tag:'finance',
+   url:'https://preview.colorlib.com/#finance',
+   img:'https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=700&h=460&fit=crop&q=80'},
+  {id:7,cat:'web',sub:'gym',icon:'fa-heart-pulse',title:'FitHub',
+   desc:'Gym & fitness studio website with class schedule and pricing',tag:'health',
+   url:'https://preview.colorlib.com/#gym',
    img:'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=700&h=460&fit=crop&q=80'},
-  // Education: student studying / e-learning setup
   {id:8,cat:'web',sub:'education',icon:'fa-graduation-cap',title:'AcademyX',
-   desc:'E-learning platform with course listings and progress',tag:'education',
-   img:'https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=700&h=460&fit=crop&q=80'},
-  // E-commerce: online shopping / product flat lay
+   desc:'E-learning & online course website with student enrollment',tag:'education',
+   url:'https://preview.colorlib.com/#educa',
+   img:'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=700&h=460&fit=crop&q=80'},
   {id:9,cat:'web',sub:'ecommerce',icon:'fa-cart-shopping',title:'Storefront',
-   desc:'E-commerce store with cart, wishlist and checkout',tag:'shop',
-   img:'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=700&h=460&fit=crop&q=80'},
-  // Real estate: modern house exterior / property
+   desc:'Online shop with product listings, cart and checkout flow',tag:'shop',
+   url:'https://preview.colorlib.com/#fancybox',
+   img:'https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=700&h=460&fit=crop&q=80'},
   {id:10,cat:'web',sub:'realestate',icon:'fa-building',title:'RealtyOne',
-   desc:'Real estate listings with map integration & filters',tag:'property',
+   desc:'Real estate agency website with property listings and map filters',tag:'property',
+   url:'https://preview.colorlib.com/#realtyna',
    img:'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=700&h=460&fit=crop&q=80'},
 
   // ── GRAPHICS TEMPLATES ───────────────────────────────────────────────────
-  // Logo design: designer working on logo on tablet/screen
-  {id:11,cat:'graphics',sub:'logo',icon:'fa-paintbrush',title:'Horizon',
-   desc:'Abstract logo template pack with 50+ modern designs',tag:'logo design',
+  {id:11,cat:'graphics',sub:'logo',icon:'fa-paintbrush',title:'Horizon Brand',
+   desc:'Modern minimalist logo template pack — 50+ designs included',tag:'logo design',
+   url:'https://www.canva.com/logos/',
    img:'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=700&h=460&fit=crop&q=80'},
-  // Eco flyer: green/nature printed poster design
   {id:12,cat:'graphics',sub:'flyer',icon:'fa-image',title:'EcoFlyers',
-   desc:'Environmental campaign flyer & poster set',tag:'flyer',
-   img:'https://images.unsplash.com/photo-1542744173-05336fcc7ad4?w=700&h=460&fit=crop&q=80'},
-  // Cosmetics branding: makeup/beauty products brand spread
-  {id:13,cat:'graphics',sub:'brand',icon:'fa-sparkles',title:'Bloom Cosmetics',
-   desc:'Luxury cosmetics brand identity kit with packaging mockups',tag:'branding',
-   img:'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=700&h=460&fit=crop&q=80'},
-  // Tech event flyer: neon tech event poster / conference
+   desc:'Nature & environment campaign flyer and poster set',tag:'flyer',
+   url:'https://www.canva.com/flyers/',
+   img:'https://images.unsplash.com/photo-1572021335469-31706a17aaef?w=700&h=460&fit=crop&q=80'},
+  {id:13,cat:'graphics',sub:'branding',icon:'fa-sparkles',title:'Bloom Cosmetics',
+   desc:'Luxury cosmetics brand identity kit with full packaging mockups',tag:'branding',
+   url:'https://www.canva.com/brand-kits/',
+   img:'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=700&h=460&fit=crop&q=80'},
   {id:14,cat:'graphics',sub:'flyer',icon:'fa-ticket',title:'TechFest',
-   desc:'Tech conference event flyer and social media pack',tag:'event',
+   desc:'Tech conference event flyer, poster and social media pack',tag:'event',
+   url:'https://www.canva.com/posters/',
    img:'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=700&h=460&fit=crop&q=80'},
-  // Coffee brand: coffee cups with latte art / cafe branding
-  {id:15,cat:'graphics',sub:'brand',icon:'fa-mug-saucer',title:'Cafe Noir',
-   desc:'Coffee shop full brand identity, menu & packaging',tag:'branding',
-   img:'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=700&h=460&fit=crop&q=80'},
-  // Organic/natural logo: herbs, plants, natural products branding
+  {id:15,cat:'graphics',sub:'branding',icon:'fa-mug-saucer',title:'Cafe Noir',
+   desc:'Coffee shop full brand identity — menu, cups & packaging designs',tag:'branding',
+   url:'https://www.canva.com/brand-kits/',
+   img:'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=700&h=460&fit=crop&q=80'},
   {id:16,cat:'graphics',sub:'logo',icon:'fa-seedling',title:'Verdant',
-   desc:'Organic food & wellness brand logo collection',tag:'logo',
-   img:'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=700&h=460&fit=crop&q=80'},
-  // Conference/speaker flyer: business conference stage
+   desc:'Organic food & natural wellness brand logo collection',tag:'logo',
+   url:'https://www.canva.com/logos/',
+   img:'https://images.unsplash.com/photo-1490818387583-1baba5e638af?w=700&h=460&fit=crop&q=80'},
   {id:17,cat:'graphics',sub:'flyer',icon:'fa-people-group',title:'Summit Speaker',
-   desc:'Business conference poster and speaker card set',tag:'flyer',
+   desc:'Business conference poster, speaker card and banner set',tag:'flyer',
+   url:'https://www.canva.com/posters/',
    img:'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=700&h=460&fit=crop&q=80'},
-  // Drone/tech logo: drone in flight / aerial tech
-  {id:18,cat:'graphics',sub:'logo',icon:'fa-helicopter',title:'Aether Drone',
-   desc:'Tech startup and drone company logo design kit',tag:'logo',
-   img:'https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=700&h=460&fit=crop&q=80'},
-  // Fashion lookbook: editorial fashion flat lay / model shoot
+  {id:18,cat:'graphics',sub:'logo',icon:'fa-bolt',title:'Spark Studio',
+   desc:'Bold tech startup logo kit with 30+ variations and color packs',tag:'logo',
+   url:'https://www.canva.com/logos/',
+   img:'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=700&h=460&fit=crop&q=80'},
   {id:19,cat:'graphics',sub:'print',icon:'fa-book-open',title:'Fashion Lookbook',
-   desc:'Editorial fashion lookbook & magazine layout',tag:'print',
-   img:'https://images.unsplash.com/photo-1558171813-0c85e9e79a8a?w=700&h=460&fit=crop&q=80'},
-  // Juice/smoothie brand: colorful fruit smoothies flat lay
-  {id:20,cat:'graphics',sub:'brand',icon:'fa-flask',title:'JuiceLab',
-   desc:'Smoothie & juice bar full brand identity kit',tag:'branding',
-   img:'https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?w=700&h=460&fit=crop&q=80'},
+   desc:'High-end editorial fashion lookbook & magazine layout template',tag:'print',
+   url:'https://www.canva.com/magazines/',
+   img:'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=700&h=460&fit=crop&q=80'},
+  {id:20,cat:'graphics',sub:'branding',icon:'fa-flask',title:'JuiceLab',
+   desc:'Smoothie & juice bar full brand identity and packaging kit',tag:'branding',
+   url:'https://www.canva.com/brand-kits/',
+   img:'https://images.unsplash.com/photo-1553530666-ba11a90a3dfc?w=700&h=460&fit=crop&q=80'},
 
   // ── PROGRAMMING TEMPLATES ─────────────────────────────────────────────────
-  // AI/ML: neural network visualization / AI concept
-  {id:21,cat:'programming',sub:'ai-ml',icon:'fa-brain',title:'FrostByte AI',
-   desc:'AI dashboard boilerplate with Python ML backend',tag:'machine learning',
-   img:'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=700&h=460&fit=crop&q=80'},
-  // API/backend: terminal/code on dark screen
-  {id:22,cat:'programming',sub:'api',icon:'fa-terminal',title:'DevForge',
-   desc:'REST API starter kit with auto-generated documentation',tag:'backend',
-   img:'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=700&h=460&fit=crop&q=80'},
-  // IoT: electronic circuit board / smart devices
-  {id:23,cat:'programming',sub:'iot',icon:'fa-microchip',title:'Quantum Core',
-   desc:'IoT dashboard template for real-time device monitoring',tag:'hardware',
-   img:'https://images.unsplash.com/photo-1518770660439-4636190af475?w=700&h=460&fit=crop&q=80'},
-  // VS Code extension: code editor screen
-  {id:24,cat:'programming',sub:'extension',icon:'fa-cpu',title:'NeoCode',
-   desc:'VS Code extension boilerplate ready to publish',tag:'dev tool',
-   img:'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=700&h=460&fit=crop&q=80'},
-  // Blockchain: blockchain/crypto visual
-  {id:25,cat:'programming',sub:'blockchain',icon:'fa-link',title:'BlockVote',
-   desc:'Blockchain voting dApp with Solidity smart contracts',tag:'web3',
-   img:'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=700&h=460&fit=crop&q=80'},
-  // Healthcare: doctor with tablet / medical dashboard
-  {id:26,cat:'programming',sub:'healthtech',icon:'fa-hospital',title:'MediTrack',
-   desc:'Healthcare system with patient records & scheduling',tag:'medical',
-   img:'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=700&h=460&fit=crop&q=80'},
-  // Mobile app: phone showing shopping app UI
-  {id:27,cat:'programming',sub:'mobile',icon:'fa-mobile-screen',title:'ShopSwift',
-   desc:'React Native e-commerce mobile app template',tag:'mobile',
-   img:'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=700&h=460&fit=crop&q=80'},
-  // Data analytics: charts and graphs dashboard on screens
-  {id:28,cat:'programming',sub:'data',icon:'fa-chart-simple',title:'DataPulse',
-   desc:'Analytics dashboard with live charts and data export',tag:'data viz',
+  {id:21,cat:'programming',sub:'AI dashboard',icon:'fa-brain',title:'FrostByte AI',
+   desc:'AI SaaS dashboard with dark UI, model stats and data charts',tag:'machine learning',
+   url:'https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/dashboards-analytics.html',
+   img:'https://images.unsplash.com/photo-1686191128892-3b37add4c844?w=700&h=460&fit=crop&q=80'},
+  {id:22,cat:'programming',sub:'admin panel',icon:'fa-terminal',title:'DevForge',
+   desc:'Full admin dashboard with data tables, charts and user management',tag:'backend',
+   url:'https://demos.themeselection.com/materio-bootstrap-html-admin-template/html/vertical-menu-template/index.html',
    img:'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&h=460&fit=crop&q=80'},
-  // DevOps/cloud: server room / cloud infrastructure
-  {id:29,cat:'programming',sub:'devops',icon:'fa-cloud-arrow-up',title:'Cloud9 IDE',
-   desc:'Cloud IDE workspace with terminal and file browser',tag:'dev environment',
-   img:'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=700&h=460&fit=crop&q=80'},
-  // Security/auth: padlock / cybersecurity visual
-  {id:30,cat:'programming',sub:'security',icon:'fa-shield',title:'AuthFlow',
-   desc:'Authentication system with OAuth & JWT support',tag:'security',
+  {id:23,cat:'programming',sub:'IoT dashboard',icon:'fa-microchip',title:'Quantum Core',
+   desc:'Real-time IoT device monitoring dashboard with live sensor data',tag:'hardware',
+   url:'https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/dashboards-iot.html',
+   img:'https://images.unsplash.com/photo-1518770660439-4636190af475?w=700&h=460&fit=crop&q=80'},
+  {id:24,cat:'programming',sub:'CRM system',icon:'fa-users-gear',title:'NexaCRM',
+   desc:'CRM system with contacts, sales pipeline and performance analytics',tag:'business app',
+   url:'https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/app-crm-dashboard.html',
+   img:'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&h=460&fit=crop&q=80'},
+  {id:25,cat:'programming',sub:'ecommerce app',icon:'fa-bag-shopping',title:'ShopCore',
+   desc:'Full e-commerce web app with product manager, cart and orders',tag:'shop app',
+   url:'https://demos.themeselection.com/materio-bootstrap-html-admin-template/html/vertical-menu-template/app-ecommerce-dashboard.html',
+   img:'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=700&h=460&fit=crop&q=80'},
+  {id:26,cat:'programming',sub:'hospital system',icon:'fa-hospital',title:'MediTrack',
+   desc:'Hospital management system with patient records and appointment scheduling',tag:'medical',
+   url:'https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/app-calendar.html',
+   img:'https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=700&h=460&fit=crop&q=80'},
+  {id:27,cat:'programming',sub:'mobile app UI',icon:'fa-mobile-screen',title:'ShopSwift',
+   desc:'Mobile-first e-commerce app UI with product pages and checkout',tag:'mobile',
+   url:'https://preview.colorlib.com/#celio',
+   img:'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=700&h=460&fit=crop&q=80'},
+  {id:28,cat:'programming',sub:'analytics',icon:'fa-chart-simple',title:'DataPulse',
+   desc:'Business analytics dashboard with live graphs, KPIs and export',tag:'data viz',
+   url:'https://demos.themeselection.com/materio-bootstrap-html-admin-template/html/vertical-menu-template/dashboards-analytics.html',
+   img:'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=700&h=460&fit=crop&q=80'},
+  {id:29,cat:'programming',sub:'project manager',icon:'fa-list-check',title:'TaskFlow',
+   desc:'Project management app with Kanban board, tasks and team workspace',tag:'productivity',
+   url:'https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/app-kanban.html',
+   img:'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=700&h=460&fit=crop&q=80'},
+  {id:30,cat:'programming',sub:'auth system',icon:'fa-shield',title:'AuthFlow',
+   desc:'Complete login & register system with JWT, OAuth and user dashboard',tag:'security',
+   url:'https://demos.themeselection.com/materio-bootstrap-html-admin-template/html/vertical-menu-template/pages-authentication-login-v2.html',
    img:'https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=700&h=460&fit=crop&q=80'},
 ];
 
@@ -566,6 +569,7 @@ function cardHTML(t){
       <div class="ct-ov"></div>
       <div class="c-icon"><i class="fa-solid ${t.icon}"></i></div>
       <div class="c-tag">${t.tag}</div>
+      ${t.url?`<a class="prev-btn" href="${t.url}" target="_blank" rel="noopener" onclick="event.stopPropagation()"><i class="fas fa-eye"></i> Live Preview</a>`:''}
     </div>
     <div class="cb">
       <div class="c-cat">${t.sub}</div>
